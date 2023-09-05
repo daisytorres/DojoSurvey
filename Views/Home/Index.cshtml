@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .custom-card {
+        border: 8px solid #ff1493; 
+    }
+
+    .custom-header {
+        background-color: #ff69b4; 
+        color: white; 
+    }
+</style>
+
+@model User
+<div class="container mt-4">
+    <div class="card custom-card">
+        <div class="card-header custom-header">
+            <h1 class="display-4">Dojo Survey Assignment</h1>
+        </div>
+
+
+        <div class="card-body">
+            <form asp-action="CreateUser" asp-controller="Home" method="post">
+
+                <div class="mb-3">
+                    <label for="Name">Name: </label>
+                    <input type="text" name="Name" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Location">Location: </label>
+                    <select name="Location" class="form-select">
+                        <option value="">Select Location</option>
+                        <option value="San Francisco">San Francisco</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="FavoriteLanguage">Favorite Language: </label>
+                    <select name="FavoriteLanguage" class="form-select">
+                        <option value="">Select Language</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                    </select>
+                    <span asp-validation-for="FavoriteLanguage" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Comment">Comment (optional) : </label>
+                    <textarea name="Comment" rows="3" cols="30" class="form-control"></textarea>
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

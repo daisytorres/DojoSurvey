@@ -1,0 +1,31 @@
+<style>
+    .custom-card {
+        border: 8px solid #ff1493;
+    }
+
+    .custom-header {
+        background-color: #ff69b4;
+        color: white;
+    }
+</style>
+
+@model List<User> //using model to take in list of users created. (you can also pass one view model per view)
+<div class="container mt-4">
+    <div class="card custom-card">
+        <div class="card-header custom-header">
+            <h1>Submitted Info</h1>
+        </div>
+
+        <div class="card-body">
+        @foreach (User newUser in Model) //Cap M is the data inside the model and accessing it
+        {
+            <p>Name: @newUser.Name </p>
+            <p>Dojo Location: @newUser.Location </p>
+            <p>Favorite Language: @newUser.FavoriteLanguage </p>
+            <p>Comment: @newUser.Comment </p>
+        }
+
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Home"> Go Back </a>
+        </div>
+    </div>
+</div>
